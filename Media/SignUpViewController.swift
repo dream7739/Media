@@ -8,99 +8,88 @@
 import UIKit
 import SnapKit
 
+enum Placeholder {
+    case email
+    case password
+    case nickname
+    case location
+    case recommand
+    
+    var titleText: String {
+        switch self {
+        case .email:
+            return "이메일 또는 전화번호"
+        case .password:
+            return "비밀번호"
+        case .nickname:
+            return "닉네임"
+        case .location:
+            return "위치"
+        case .recommand:
+            return "추천 코드 입력"
+        }
+    }
+}
+
 class SignUpViewController: UIViewController {
     
     let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "NETFLIX"
-        label.textColor = .red
-        label.font = .systemFont(ofSize: 40, weight: .heavy)
         return label
     }()
     
     let stackView: UIStackView = {
         let stackView = UIStackView()
-        stackView.spacing = 13
-        stackView.distribution = .fillEqually
-        stackView.axis = .vertical
         return stackView
     }()
     
     let emailTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "이메일 주소 또는 전화번호"
-        textField.backgroundColor = .darkGray
-        textField.textColor = .white
-        textField.layer.cornerRadius = 10
         return textField
     }()
     
     let passwordTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "비밀번호"
-        textField.backgroundColor = .darkGray
-        textField.textColor = .white
-        textField.layer.cornerRadius = 10
         return textField
     }()
     
     let nicknameTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "닉네임"
-        textField.backgroundColor = .darkGray
-        textField.textColor = .white
-        textField.layer.cornerRadius = 10
         return textField
     }()
     
     let locationTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "위치"
-        textField.backgroundColor = .darkGray
-        textField.textColor = .white
-        textField.layer.cornerRadius = 10
         return textField
     }()
     
     let recommandTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "추천 코드 입력"
-        textField.backgroundColor = .darkGray
-        textField.textColor = .white
-        textField.layer.cornerRadius = 10
         return textField
     }()
     
     let signUpButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("회원가입", for: .normal)
-        button.backgroundColor = .white
-        button.layer.cornerRadius = 5
-        button.tintColor = .black
         return button
     }()
     
     let additionalLabel: UILabel = {
         let label = UILabel()
-        label.textAlignment = .left
-        label.textColor = .white
-        label.font = .systemFont(ofSize: 18, weight: .medium)
-        label.text = "추가 정보 입력"
         return label
     }()
     
     let additionalSwitch: UISwitch = {
         let switchButton = UISwitch()
-        switchButton.onTintColor = .red
-        switchButton.isOn = true
         return switchButton
     }()
+    
+    lazy var textFieldList = [emailTextField, passwordTextField, nicknameTextField, locationTextField, recommandTextField]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureHierarchy()
         configureLayout()
-       
+        configureUI()
     }
     
     func configureHierarchy(){
@@ -120,7 +109,7 @@ class SignUpViewController: UIViewController {
         view.addSubview(additionalLabel)
         
         view.addSubview(additionalSwitch)
-
+        
     }
     
     func configureLayout(){
@@ -156,5 +145,52 @@ class SignUpViewController: UIViewController {
         }
         
     }
+    
+    func configureUI(){
+        titleLabel.text = "NETFLIX"
+        titleLabel.textColor = .red
+        titleLabel.font = .extream
+        
+        stackView.spacing = 13
+        stackView.distribution = .fillEqually
+        stackView.axis = .vertical
+        
+        for item in textFieldList {
+            designTextField(item)
+        }
+        
+        designTextFieldContent(emailTextField, Placeholder.email)
+        designTextFieldContent(passwordTextField, Placeholder.password)
+        designTextFieldContent(nicknameTextField, Placeholder.nickname)
+        designTextFieldContent(locationTextField, Placeholder.location)
+        designTextFieldContent(recommandTextField, Placeholder.recommand)
+        
+        signUpButton.setTitle("회원가입", for: .normal)
+        signUpButton.backgroundColor = .white
+        signUpButton.layer.cornerRadius = 5
+        signUpButton.tintColor = .black
+        
+        additionalLabel.textAlignment = .left
+        additionalLabel.textColor = .white
+        additionalLabel.font = .secondary
+        additionalLabel.text = "추가 정보 입력"
 
+        additionalSwitch.onTintColor = .red
+        additionalSwitch.isOn = true
+    }
+    
+    func designTextField(_ sender: UITextField){
+        sender.font = .systemFont(ofSize: 13)
+        sender.backgroundColor = .darkGray
+        sender.tintColor = .white
+        sender.textColor = .white
+        sender.layer.cornerRadius = 10
+        sender.textAlignment = .center
+    }
+    
+    func designTextFieldContent(_ sender: UITextField, _ placeHolderType: Placeholder){
+        let placeholderText =  NSAttributedString(string: placeHolderType.titleText, attributes: [.foregroundColor : UIColor.white, .font : UIFont.tertiary])
+        sender.attributedPlaceholder = placeholderText
+        
+    }
 }

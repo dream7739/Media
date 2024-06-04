@@ -58,7 +58,7 @@ class MediaViewController: UIViewController {
     let hotContentLabel: UILabel = {
         let label = UILabel()
         label.text = "지금 뜨는 컨텐츠"
-        label.font = .systemFont(ofSize: 20, weight: .semibold)
+        label.font = .systemFont(ofSize: 18, weight: .semibold)
         label.textColor = .white
         return label
     }()
