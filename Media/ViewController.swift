@@ -25,7 +25,8 @@ class ViewController: UIViewController {
     
     @objc func mediaButtonClicked(){
         let vc = MediaViewController()
-        present(vc, animated: true)
+        let nav = UINavigationController(rootViewController: vc)
+        present(nav, animated: true)
     }
 }
 
