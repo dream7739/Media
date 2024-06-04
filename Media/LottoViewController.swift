@@ -29,15 +29,27 @@ class LottoViewController: UIViewController {
     let drwNoTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "로또 회차를 입력해주세요"
+        textField.clearButtonMode = .whileEditing
         return textField
     }()
     
     let confirmButton : UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("확인", for: .normal)
-        button.backgroundColor = .systemPink
-        button.tintColor = .white
+        button.backgroundColor = .white
+        button.layer.cornerRadius = 10
+        button.clipsToBounds = true
+        button.layer.borderWidth = 1
+        button.tintColor = .black
         return button
+    }()
+    
+    let drwNoLabel: UILabel = {
+        let label = UILabel()
+        label.text = "당첨 정보"
+        label.font = .secondary
+        label.textColor = .darkGray
+        return label
     }()
     
     let stackView: UIStackView = {
@@ -74,7 +86,7 @@ class LottoViewController: UIViewController {
         let label = UILabel()
         label.layer.cornerRadius = 23
         label.clipsToBounds = true
-        label.backgroundColor = .orange
+        label.backgroundColor = .systemMint
         label.textAlignment = .center
         label.textColor = .white
 
@@ -85,7 +97,7 @@ class LottoViewController: UIViewController {
         let label = UILabel()
         label.layer.cornerRadius = 23
         label.clipsToBounds = true
-        label.backgroundColor = .orange
+        label.backgroundColor = .systemMint
         label.textAlignment = .center
         label.textColor = .white
 
@@ -125,6 +137,8 @@ class LottoViewController: UIViewController {
         return label
     }()
     
+    final let latestDrwNo = 1122
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -132,13 +146,14 @@ class LottoViewController: UIViewController {
         configureLayout()
         configureUI()
         
-        getLottoNumber(1122)
+        getLottoNumber(latestDrwNo)
         
     }
     
     func configureHierarchy(){
         view.addSubview(drwNoTextField)
         view.addSubview(confirmButton)
+        view.addSubview(drwNoLabel)
         
         view.addSubview(stackView)
        
@@ -149,6 +164,8 @@ class LottoViewController: UIViewController {
         stackView.addArrangedSubview(drwtNo5Label)
         stackView.addArrangedSubview(drwtNo6Label)
         stackView.addArrangedSubview(bonusNoLabel)
+        
+        
 
     }
     
@@ -166,10 +183,15 @@ class LottoViewController: UIViewController {
             make.leading.trailing.equalTo(drwNoTextField)
         }
         
-        stackView.snp.makeConstraints { make in
-            make.top.equalTo(confirmButton.snp.bottom).offset(20)
+        drwNoLabel.snp.makeConstraints { make in
             make.leading.trailing.equalTo(confirmButton)
-            make.height.equalTo(50)
+            make.top.equalTo(confirmButton.snp.bottom).offset(15)
+        }
+        
+        stackView.snp.makeConstraints { make in
+            make.top.equalTo(drwNoLabel.snp.bottom).offset(15)
+            make.leading.trailing.equalTo(drwNoLabel)
+            make.height.equalTo(46)
         }
     }
     
@@ -179,7 +201,7 @@ class LottoViewController: UIViewController {
     }
     
     @objc func confirmButtonClicked(){
-        guard let lottoNo = drwNoTextField.text, let convertedNo = Int(lottoNo), convertedNo < 1112 else {
+        guard let lottoNo = drwNoTextField.text, let convertedNo = Int(lottoNo), convertedNo < latestDrwNo else {
             return
         }
         
@@ -188,10 +210,12 @@ class LottoViewController: UIViewController {
     
     func getLottoNumber(_ drawNo: Int){
         let url = "https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo=\(drawNo)"
+        
         AF.request(url).responseDecodable(of: Lotto.self) { response in
             switch response.result {
             case .success(let value):
                 print(value)
+                self.drwNoLabel.text = "1등 당첨자 수 : \(value.firstPrzwnerCo)명, 1등 상금 : \(value.firstWinamnt.formatted(.number))원"
                 self.drwtNo1Label.text = "\(value.drwtNo1)"
                 self.drwtNo2Label.text = "\(value.drwtNo2)"
                 self.drwtNo3Label.text = "\(value.drwtNo3)"
@@ -199,6 +223,7 @@ class LottoViewController: UIViewController {
                 self.drwtNo5Label.text = "\(value.drwtNo5)"
                 self.drwtNo6Label.text = "\(value.drwtNo6)"
                 self.bonusNoLabel.text = "\(value.bnusNo)"
+                
             case .failure(let error):
                 print(error)
             }
