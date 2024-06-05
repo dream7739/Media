@@ -10,114 +10,31 @@ import SnapKit
 
 class MediaViewController: UIViewController {
     
-    let posterImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.layer.cornerRadius = 10
-        imageView.clipsToBounds = true
-        imageView.image = UIImage(named: "아바타")
-        return imageView
-    }()
+    let posterImageView = UIImageView()
     
-    let stackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.spacing = 8
-        stackView.distribution = .fillEqually
-        return stackView
-    }()
+    let stackView = UIStackView()
     
-    let playButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("재생", for: .normal)
-        button.setImage(UIImage(systemName: "play.fill"), for: .normal)
-        button.tintColor = .black
-        button.backgroundColor = .white
-        button.layer.cornerRadius = 8
-        return button
-    }()
+    let playButton = UIButton(type: .system)
     
-    let favoriteButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("내가 찜한 리스트", for: .normal)
-        button.setImage(UIImage(systemName: "plus"), for: .normal)
-        button.tintColor = .white
-        button.backgroundColor = .darkGray
-        button.layer.cornerRadius = 8
-        return button
-    }()
+    let favoriteButton = UIButton(type: .system)
     
-    let descriptionLabel: UILabel = {
-        let label = UILabel()
-        label.text = "응원하고픈 · 흥미진진 · 사극 · 전투 · 한국작품"
-        label.font = .systemFont(ofSize: 15)
-        label.textColor = .white
-        return label
-    }()
+    let descriptionLabel = UILabel()
     
-    let hotContentLabel: UILabel = {
-        let label = UILabel()
-        label.text = "지금 뜨는 컨텐츠"
-        label.font = .systemFont(ofSize: 18, weight: .semibold)
-        label.textColor = .white
-        return label
-    }()
+    let hotContentLabel = UILabel()
     
-    let posterStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.distribution = .fillEqually
-        stackView.spacing = 10
-        return stackView
-    }()
+    let posterStackView = UIStackView()
     
-    let firstPosterImage: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.layer.cornerRadius = 8
-        imageView.clipsToBounds = true
-        imageView.image = UIImage(named: "1")
-        return imageView
-    }()
+    let firstPosterImage = UIImageView()
     
-    let secondPosterImage: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.layer.cornerRadius = 8
-        imageView.clipsToBounds = true
-        imageView.image = UIImage(named: "2")
-        return imageView
-    }()
+    let secondPosterImage = UIImageView()
     
-    let thirdPosterImage: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.layer.cornerRadius = 8
-        imageView.clipsToBounds = true
-        imageView.image = UIImage(named: "3")
-        return imageView
-    }()
+    let thirdPosterImage = UIImageView()
     
-    let top10Image1: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "top10 badge")
-        imageView.contentMode = .scaleAspectFill
-        return imageView
-    }()
+    let top10Image1 = UIImageView()
     
-    let top10Image2: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "top10 badge")
-        imageView.contentMode = .scaleAspectFill
-        return imageView
-    }()
+    let top10Image2 = UIImageView()
     
-    let top10Image3: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "top10 badge")
-        imageView.contentMode = .scaleAspectFill
-        return imageView
-    }()
+    let top10Image3 = UIImageView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -155,15 +72,13 @@ class MediaViewController: UIViewController {
     func configureLayout(){
         posterImageView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide)
-            make.leading.equalToSuperview().offset(30)
-            make.trailing.equalToSuperview().offset(-30)
+            make.leading.trailing.equalToSuperview().inset(30)
             make.height.equalTo(posterImageView.snp.width).multipliedBy(1.2)
         }
         
         stackView.snp.makeConstraints { make in
             make.bottom.equalTo(posterImageView).offset(-20)
-            make.leading.equalTo(posterImageView).offset(15)
-            make.trailing.equalTo(posterImageView).offset(-15)
+            make.leading.trailing.equalTo(posterImageView).inset(15)
         }
         
         playButton.snp.makeConstraints { make in
@@ -210,7 +125,64 @@ class MediaViewController: UIViewController {
         navigationItem.title = "홍정민님"
         navigationController?.navigationBar.titleTextAttributes = [
             .foregroundColor : UIColor.white,
-            .font : UIFont.boldSystemFont(ofSize: 20)
+            .font : UIFont.primary
         ]
+        
+        posterImageView.contentMode = .scaleAspectFill
+        posterImageView.layer.cornerRadius = 10
+        posterImageView.clipsToBounds = true
+        posterImageView.image = UIImage(named: "아바타")
+        
+        stackView.axis = .horizontal
+        stackView.spacing = 8
+        stackView.distribution = .fillEqually
+        
+        playButton.setTitle("재생", for: .normal)
+        playButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
+        playButton.tintColor = .black
+        playButton.backgroundColor = .white
+        playButton.layer.cornerRadius = 8
+        
+        favoriteButton.setTitle("내가 찜한 리스트", for: .normal)
+        favoriteButton.setImage(UIImage(systemName: "plus"), for: .normal)
+        favoriteButton.tintColor = .white
+        favoriteButton.backgroundColor = .darkGray
+        favoriteButton.layer.cornerRadius = 8
+        
+        descriptionLabel.text = "응원하고픈 · 흥미진진 · 사극 · 전투 · 한국작품"
+        descriptionLabel.font = .tertiary
+        descriptionLabel.textColor = .white
+        
+        hotContentLabel.text = "지금 뜨는 컨텐츠"
+        hotContentLabel.font = .secondary
+        hotContentLabel.textColor = .white
+        
+        posterStackView.axis = .horizontal
+        posterStackView.distribution = .fillEqually
+        posterStackView.spacing = 10
+        
+        firstPosterImage.contentMode = .scaleAspectFill
+        firstPosterImage.layer.cornerRadius = 8
+        firstPosterImage.clipsToBounds = true
+        firstPosterImage.image = UIImage(named: "1")
+        
+        secondPosterImage.contentMode = .scaleAspectFill
+        secondPosterImage.layer.cornerRadius = 8
+        secondPosterImage.clipsToBounds = true
+        secondPosterImage.image = UIImage(named: "2")
+        
+        thirdPosterImage.contentMode = .scaleAspectFill
+        thirdPosterImage.layer.cornerRadius = 8
+        thirdPosterImage.clipsToBounds = true
+        thirdPosterImage.image = UIImage(named: "3")
+        
+        top10Image1.image = UIImage(named: "top10 badge")
+        top10Image1.contentMode = .scaleAspectFill
+        
+        top10Image2.image = UIImage(named: "top10 badge")
+        top10Image2.contentMode = .scaleAspectFill
+        
+        top10Image3.image = UIImage(named: "top10 badge")
+        top10Image3.contentMode = .scaleAspectFill
     }
 }

@@ -10,132 +10,31 @@ import UIKit
 import Alamofire
 import SnapKit
 
-struct Lotto : Decodable {
-    let totSellamnt: Int
-    let drwNoDate: String
-    let firstWinamnt: Int
-    let firstPrzwnerCo: Int
-    let drwtNo1: Int
-    let drwtNo2: Int
-    let drwtNo3: Int
-    let drwtNo4: Int
-    let drwtNo5: Int
-    let drwtNo6: Int
-    let bnusNo: Int
-}
+
 
 class LottoViewController: UIViewController {
     
-    let drwNoTextField: UITextField = {
-        let textField = UITextField()
-        textField.placeholder = "로또 회차를 입력해주세요"
-        textField.clearButtonMode = .whileEditing
-        return textField
-    }()
+    let drwNoTextField = UITextField()
     
-    let confirmButton : UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("확인", for: .normal)
-        button.backgroundColor = .white
-        button.layer.cornerRadius = 10
-        button.clipsToBounds = true
-        button.layer.borderWidth = 1
-        button.tintColor = .black
-        return button
-    }()
+    let confirmButton = UIButton(type: .system)
     
-    let drwNoLabel: UILabel = {
-        let label = UILabel()
-        label.text = "당첨 정보"
-        label.font = .secondary
-        label.textColor = .darkGray
-        return label
-    }()
+    let drwNoLabel = UILabel()
     
-    let stackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.spacing = 3
-        stackView.distribution = .fillEqually
-        return stackView
-    }()
+    let stackView = UIStackView()
     
-    let drwtNo1Label: UILabel = {
-        let label = UILabel()
-        label.layer.cornerRadius = 23
-        label.clipsToBounds = true
-        label.backgroundColor = .orange
-        label.textAlignment = .center
-        label.textColor = .white
-        
-        return label
-    }()
+    let drwtNo1Label = UILabel()
     
-    let drwtNo2Label: UILabel = {
-        let label = UILabel()
-        label.layer.cornerRadius = 23
-        label.clipsToBounds = true     
-        label.backgroundColor = .orange
-        label.textAlignment = .center
-        label.textColor = .white
-
-        return label
-    }()
+    let drwtNo2Label = UILabel()
     
-    let drwtNo3Label: UILabel = {
-        let label = UILabel()
-        label.layer.cornerRadius = 23
-        label.clipsToBounds = true
-        label.backgroundColor = .systemMint
-        label.textAlignment = .center
-        label.textColor = .white
-
-        return label
-    }()
+    let drwtNo3Label = UILabel()
     
-    let drwtNo4Label: UILabel = {
-        let label = UILabel()
-        label.layer.cornerRadius = 23
-        label.clipsToBounds = true
-        label.backgroundColor = .systemMint
-        label.textAlignment = .center
-        label.textColor = .white
-
-        return label
-    }()
+    let drwtNo4Label = UILabel()
     
-    let drwtNo5Label: UILabel = {
-        let label = UILabel()
-        label.layer.cornerRadius = 23
-        label.clipsToBounds = true
-        label.backgroundColor = .lightGray
-        label.textAlignment = .center
-        label.textColor = .white
-
-        return label
-    }()
+    let drwtNo5Label = UILabel()
     
-    let drwtNo6Label: UILabel = {
-        let label = UILabel()
-        label.layer.cornerRadius = 23
-        label.clipsToBounds = true
-        label.backgroundColor = .lightGray
-        label.textAlignment = .center
-        label.textColor = .white
-
-        return label
-    }()
+    let drwtNo6Label = UILabel()
     
-    let bonusNoLabel: UILabel = {
-        let label = UILabel()
-        label.layer.cornerRadius = 23
-        label.clipsToBounds = true
-        label.backgroundColor = .brown
-        label.textAlignment = .center
-        label.textColor = .white
-
-        return label
-    }()
+    let bonusNoLabel = UILabel()
     
     final let latestDrwNo = 1122
     
@@ -173,8 +72,7 @@ class LottoViewController: UIViewController {
         drwNoTextField.snp.makeConstraints { make in
             make.height.equalTo(40)
             make.top.equalTo(view.safeAreaLayoutGuide).offset(10)
-            make.leading.equalToSuperview().offset(20)
-            make.trailing.equalToSuperview().offset(-20)
+            make.leading.trailing.equalToSuperview().inset(20)
         }
         
         confirmButton.snp.makeConstraints { make in
@@ -197,7 +95,67 @@ class LottoViewController: UIViewController {
     
     func configureUI(){
         view.backgroundColor = .white
+        
+        drwNoTextField.placeholder = "로또 회차를 입력해주세요"
+        drwNoTextField.clearButtonMode = .whileEditing
+        
+        confirmButton.setTitle("확인", for: .normal)
+        confirmButton.backgroundColor = .white
+        confirmButton.layer.cornerRadius = 10
+        confirmButton.clipsToBounds = true
+        confirmButton.layer.borderWidth = 1
+        confirmButton.tintColor = .black
         confirmButton.addTarget(self, action: #selector(confirmButtonClicked), for: .touchUpInside)
+        
+        drwNoLabel.text = "당첨 정보"
+        drwNoLabel.font = .secondary
+        drwNoLabel.textColor = .darkGray
+        
+        stackView.axis = .horizontal
+        stackView.spacing = 3
+        stackView.distribution = .fillEqually
+        
+        drwtNo1Label.layer.cornerRadius = 23
+        drwtNo1Label.clipsToBounds = true
+        drwtNo1Label.backgroundColor = .orange
+        drwtNo1Label.textAlignment = .center
+        drwtNo1Label.textColor = .white
+        
+        drwtNo2Label.layer.cornerRadius = 23
+        drwtNo2Label.clipsToBounds = true
+        drwtNo2Label.backgroundColor = .orange
+        drwtNo2Label.textAlignment = .center
+        drwtNo2Label.textColor = .white
+        
+        drwtNo3Label.layer.cornerRadius = 23
+        drwtNo3Label.clipsToBounds = true
+        drwtNo3Label.backgroundColor = .systemMint
+        drwtNo3Label.textAlignment = .center
+        drwtNo3Label.textColor = .white
+        
+        drwtNo4Label.layer.cornerRadius = 23
+        drwtNo4Label.clipsToBounds = true
+        drwtNo4Label.backgroundColor = .systemMint
+        drwtNo4Label.textAlignment = .center
+        drwtNo4Label.textColor = .white
+        
+        drwtNo5Label.layer.cornerRadius = 23
+        drwtNo5Label.clipsToBounds = true
+        drwtNo5Label.backgroundColor = .lightGray
+        drwtNo5Label.textAlignment = .center
+        drwtNo5Label.textColor = .white
+        
+        drwtNo6Label.layer.cornerRadius = 23
+        drwtNo6Label.clipsToBounds = true
+        drwtNo6Label.backgroundColor = .lightGray
+        drwtNo6Label.textAlignment = .center
+        drwtNo6Label.textColor = .white
+        
+        bonusNoLabel.layer.cornerRadius = 23
+        bonusNoLabel.clipsToBounds = true
+        bonusNoLabel.backgroundColor = .orange
+        bonusNoLabel.textAlignment = .center
+        bonusNoLabel.textColor = .white
     }
     
     @objc func confirmButtonClicked(){
@@ -214,7 +172,6 @@ class LottoViewController: UIViewController {
         AF.request(url).responseDecodable(of: Lotto.self) { response in
             switch response.result {
             case .success(let value):
-                print(value)
                 self.drwNoLabel.text = "1등 당첨자 수 : \(value.firstPrzwnerCo)명, 1등 상금 : \(value.firstWinamnt.formatted(.number))원"
                 self.drwtNo1Label.text = "\(value.drwtNo1)"
                 self.drwtNo2Label.text = "\(value.drwtNo2)"

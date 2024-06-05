@@ -33,55 +33,25 @@ enum Placeholder {
 
 class SignUpViewController: UIViewController {
     
-    let titleLabel: UILabel = {
-        let label = UILabel()
-        return label
-    }()
+    let titleLabel = UILabel()
     
-    let stackView: UIStackView = {
-        let stackView = UIStackView()
-        return stackView
-    }()
+    let stackView = UIStackView()
     
-    let emailTextField: UITextField = {
-        let textField = UITextField()
-        return textField
-    }()
+    let emailTextField =  UITextField()
     
-    let passwordTextField: UITextField = {
-        let textField = UITextField()
-        return textField
-    }()
+    let passwordTextField =  UITextField()
     
-    let nicknameTextField: UITextField = {
-        let textField = UITextField()
-        return textField
-    }()
+    let nicknameTextField = UITextField()
     
-    let locationTextField: UITextField = {
-        let textField = UITextField()
-        return textField
-    }()
+    let locationTextField = UITextField()
     
-    let recommandTextField: UITextField = {
-        let textField = UITextField()
-        return textField
-    }()
+    let recommandTextField = UITextField()
     
-    let signUpButton: UIButton = {
-        let button = UIButton(type: .system)
-        return button
-    }()
+    let signUpButton = UIButton(type: .system)
     
-    let additionalLabel: UILabel = {
-        let label = UILabel()
-        return label
-    }()
+    let additionalLabel = UILabel()
     
-    let additionalSwitch: UISwitch = {
-        let switchButton = UISwitch()
-        return switchButton
-    }()
+    let additionalSwitch = UISwitch()
     
     lazy var textFieldList = [emailTextField, passwordTextField, nicknameTextField, locationTextField, recommandTextField]
     
