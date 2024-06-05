@@ -15,7 +15,7 @@ class BoxOfficeTableViewCell: UITableViewCell {
     let nameLabel = UILabel()
     
     let dateLabel = UILabel()
-    
+        
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configureHierarchy()
@@ -44,11 +44,11 @@ class BoxOfficeTableViewCell: UITableViewCell {
         nameLabel.snp.makeConstraints { make in
             make.centerY.equalTo(rankLabel)
             make.leading.equalTo(rankLabel.snp.trailing).offset(15)
+            make.width.equalTo(200)
         }
         
         dateLabel.snp.makeConstraints { make in
             make.centerY.equalTo(nameLabel)
-            make.leading.equalTo(nameLabel.snp.trailing).offset(10)
             make.trailing.equalToSuperview().offset(-20)
         }
     }
@@ -66,6 +66,12 @@ class BoxOfficeTableViewCell: UITableViewCell {
         dateLabel.textColor = .lightGray
         dateLabel.textAlignment = .right
         dateLabel.font = .tertiary
+    }
+    
+    func configureData(_ data: DailyBoxOffice){
+        rankLabel.text = data.rank
+        nameLabel.text = data.movieNm
+        dateLabel.text = data.openDt
     }
     
 
