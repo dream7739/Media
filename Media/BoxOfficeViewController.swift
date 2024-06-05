@@ -10,7 +10,7 @@ import Alamofire
 import SnapKit
 
 class BoxOfficeViewController: UIViewController {
-
+    
     let dateTextField = UITextField()
     let searchButton = UIButton(type: .system)
     let highLightLabel = UILabel()
@@ -21,7 +21,7 @@ class BoxOfficeViewController: UIViewController {
         configureHierarchy()
         configureLayout()
         configureUI()
-        
+        configureTableView()
         AF.request(APIURL.boxOfficeURL).responseString { response in
             print(response)
         }
@@ -57,7 +57,7 @@ class BoxOfficeViewController: UIViewController {
         
         movieTableView.snp.makeConstraints { make in
             make.top.equalTo(highLightLabel.snp.bottom).offset(10)
-            make.horizontalEdges.equalToSuperview().inset(20)
+            make.horizontalEdges.equalToSuperview()
             make.bottom.equalTo(view.safeAreaLayoutGuide)
         }
         
@@ -65,7 +65,7 @@ class BoxOfficeViewController: UIViewController {
     
     func configureUI(){
         view.backgroundColor = .black
-
+        
         searchButton.backgroundColor = .white
         searchButton.setTitle("검색", for: .normal)
         searchButton.tintColor = .black
@@ -75,10 +75,35 @@ class BoxOfficeViewController: UIViewController {
         dateTextField.textAlignment = .left
         dateTextField.placeholder = "날짜를 입력해주세요"
         dateTextField.attributedPlaceholder = NSAttributedString(string: dateTextField.placeholder!, attributes: [.foregroundColor : UIColor.white])
+        dateTextField.textColor = .white
         
         highLightLabel.backgroundColor = .lightGray
         
-        movieTableView.backgroundColor = .red
+        movieTableView.backgroundColor = .black
     }
+    
+    func configureTableView(){
+        movieTableView.delegate = self
+        movieTableView.dataSource = self
+        movieTableView.rowHeight = 50
+        
+        movieTableView.register(BoxOfficeTableViewCell.self, forCellReuseIdentifier: BoxOfficeTableViewCell.identifier)
+    }
+    
+}
+
+extension BoxOfficeViewController : UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        100
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: BoxOfficeTableViewCell.identifier, for: indexPath) as! BoxOfficeTableViewCell
+        cell.rankLabel.text = "1"
+        cell.nameLabel.text = "ghisdhiasdjflaskdflaskd"
+        cell.dateLabel.text = "hi-hi-hi"
+        return cell
+    }
+    
     
 }
