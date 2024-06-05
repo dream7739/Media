@@ -8,6 +8,13 @@
 import UIKit
 
 struct Lotto : Decodable {
+    static let latestDrwNo: Int = {
+        let startDateComponent = DateComponents(year: 2002, month: 12, day: 07)
+        let startDate = Calendar.current.date(from: startDateComponent)!
+        let cmpDate = Calendar.current.dateComponents([.weekday], from: startDate, to: Date())
+        return (cmpDate.weekday! / 7) + 1
+    }()
+    
     let totSellamnt: Int
     let drwNoDate: String
     let firstWinamnt: Int
