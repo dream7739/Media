@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		88063A472C0F55EE00514D05 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88063A462C0F55EE00514D05 /* UIFont+Extension.swift */; };
 		8815C3352C1047B000CEE18B /* Lotto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815C3342C1047B000CEE18B /* Lotto.swift */; };
+		8815C3372C104C1700CEE18B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 8815C3362C104C1700CEE18B /* .gitignore */; };
 		889111592C0F51E700010780 /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889111582C0F51E700010780 /* LottoViewController.swift */; };
 		8891115C2C0F520B00010780 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8891115B2C0F520B00010780 /* Alamofire */; };
 		8899669E2C0EF55100A58D6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8899669D2C0EF55100A58D6F /* AppDelegate.swift */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		88063A462C0F55EE00514D05 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		8815C3342C1047B000CEE18B /* Lotto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lotto.swift; sourceTree = "<group>"; };
+		8815C3362C104C1700CEE18B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		889111582C0F51E700010780 /* LottoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LottoViewController.swift; sourceTree = "<group>"; };
 		8899669A2C0EF55100A58D6F /* Media.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Media.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8899669D2C0EF55100A58D6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 		889966912C0EF55100A58D6F = {
 			isa = PBXGroup;
 			children = (
+				8815C3362C104C1700CEE18B /* .gitignore */,
 				8899669C2C0EF55100A58D6F /* Media */,
 				8899669B2C0EF55100A58D6F /* Products */,
 			);
@@ -152,6 +155,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8815C3372C104C1700CEE18B /* .gitignore in Resources */,
 				889966A72C0EF55200A58D6F /* Assets.xcassets in Resources */,
 				889966AA2C0EF55200A58D6F /* Base in Resources */,
 				889966A52C0EF55100A58D6F /* Base in Resources */,
