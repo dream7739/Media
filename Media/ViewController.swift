@@ -12,12 +12,14 @@ class ViewController: UIViewController {
     @IBOutlet var signUpButton: UIButton!
     @IBOutlet var mediaButton: UIButton!
     @IBOutlet var lottoButton: UIButton!
+    @IBOutlet var boxOfficeButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         signUpButton.addTarget(self, action: #selector(signUpButtonClicked), for: .touchUpInside)
         mediaButton.addTarget(self, action: #selector(mediaButtonClicked), for: .touchUpInside)
         lottoButton.addTarget(self, action: #selector(lottoButtonClicked), for: .touchUpInside)
+        boxOfficeButton.addTarget(self, action: #selector(boxOfficeButtonClicked), for: .touchUpInside)
     }
 
     @objc func signUpButtonClicked(){
@@ -33,6 +35,12 @@ class ViewController: UIViewController {
     
     @objc func lottoButtonClicked(){
         let vc = LottoViewController()
+        present(vc, animated: true)
+    }
+    
+    @objc func boxOfficeButtonClicked(){
+        let vc = BoxOfficeViewController()
+        vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
     }
 }

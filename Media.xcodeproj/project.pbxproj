@@ -11,6 +11,7 @@
 		8815C3352C1047B000CEE18B /* Lotto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815C3342C1047B000CEE18B /* Lotto.swift */; };
 		8815C3372C104C1700CEE18B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 8815C3362C104C1700CEE18B /* .gitignore */; };
 		8815C3392C104E6A00CEE18B /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815C3382C104E6A00CEE18B /* APIKey.swift */; };
+		8815C33B2C10795400CEE18B /* BoxOfficeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815C33A2C10795400CEE18B /* BoxOfficeViewController.swift */; };
 		889111592C0F51E700010780 /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889111582C0F51E700010780 /* LottoViewController.swift */; };
 		8891115C2C0F520B00010780 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8891115B2C0F520B00010780 /* Alamofire */; };
 		8899669E2C0EF55100A58D6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8899669D2C0EF55100A58D6F /* AppDelegate.swift */; };
@@ -29,6 +30,7 @@
 		8815C3342C1047B000CEE18B /* Lotto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lotto.swift; sourceTree = "<group>"; };
 		8815C3362C104C1700CEE18B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		8815C3382C104E6A00CEE18B /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		8815C33A2C10795400CEE18B /* BoxOfficeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeViewController.swift; sourceTree = "<group>"; };
 		889111582C0F51E700010780 /* LottoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LottoViewController.swift; sourceTree = "<group>"; };
 		8899669A2C0EF55100A58D6F /* Media.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Media.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8899669D2C0EF55100A58D6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				88063A462C0F55EE00514D05 /* UIFont+Extension.swift */,
 				8815C3342C1047B000CEE18B /* Lotto.swift */,
 				8815C3382C104E6A00CEE18B /* APIKey.swift */,
+				8815C33A2C10795400CEE18B /* BoxOfficeViewController.swift */,
 			);
 			path = Media;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 				8899669E2C0EF55100A58D6F /* AppDelegate.swift in Sources */,
 				889966B22C0EF6CB00A58D6F /* SignUpViewController.swift in Sources */,
 				8815C3392C104E6A00CEE18B /* APIKey.swift in Sources */,
+				8815C33B2C10795400CEE18B /* BoxOfficeViewController.swift in Sources */,
 				889966A02C0EF55100A58D6F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
