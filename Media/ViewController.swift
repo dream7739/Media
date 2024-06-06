@@ -49,7 +49,8 @@ class ViewController: UIViewController {
     
     @objc func weatherButtonClicked(){
         let vc = WeatherViewController()
-        present(vc, animated: true)
+        let nav = UINavigationController(rootViewController: vc)
+        present(nav, animated: true)
     }
 }
 

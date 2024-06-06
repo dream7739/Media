@@ -15,6 +15,8 @@
 		8815C33D2C1086B100CEE18B /* BoxOfficeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815C33C2C1086B100CEE18B /* BoxOfficeTableViewCell.swift */; };
 		8815C33F2C1086F500CEE18B /* ReusableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815C33E2C1086F500CEE18B /* ReusableProtocol.swift */; };
 		885885642C108DAA002CDDD3 /* BoxOffice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885885632C108DAA002CDDD3 /* BoxOffice.swift */; };
+		88636DDA2C119C6D00B799EE /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 88636DD92C119C6D00B799EE /* Kingfisher */; };
+		88636DDD2C119F5900B799EE /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88636DDC2C119F5900B799EE /* UIColor+Extension.swift */; };
 		889111592C0F51E700010780 /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889111582C0F51E700010780 /* LottoViewController.swift */; };
 		8891115C2C0F520B00010780 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8891115B2C0F520B00010780 /* Alamofire */; };
 		8899669E2C0EF55100A58D6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8899669D2C0EF55100A58D6F /* AppDelegate.swift */; };
@@ -39,6 +41,7 @@
 		8815C33C2C1086B100CEE18B /* BoxOfficeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeTableViewCell.swift; sourceTree = "<group>"; };
 		8815C33E2C1086F500CEE18B /* ReusableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableProtocol.swift; sourceTree = "<group>"; };
 		885885632C108DAA002CDDD3 /* BoxOffice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOffice.swift; sourceTree = "<group>"; };
+		88636DDC2C119F5900B799EE /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		889111582C0F51E700010780 /* LottoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LottoViewController.swift; sourceTree = "<group>"; };
 		8899669A2C0EF55100A58D6F /* Media.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Media.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8899669D2C0EF55100A58D6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88636DDA2C119C6D00B799EE /* Kingfisher in Frameworks */,
 				889966B52C0EF77B00A58D6F /* SnapKit in Frameworks */,
 				8891115C2C0F520B00010780 /* Alamofire in Frameworks */,
 			);
@@ -67,6 +71,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		88636DDB2C119F4C00B799EE /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				88063A462C0F55EE00514D05 /* UIFont+Extension.swift */,
+				88636DDC2C119F5900B799EE /* UIColor+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		889966912C0EF55100A58D6F = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +100,7 @@
 		8899669C2C0EF55100A58D6F /* Media */ = {
 			isa = PBXGroup;
 			children = (
+				88636DDB2C119F4C00B799EE /* Extension */,
 				889111582C0F51E700010780 /* LottoViewController.swift */,
 				8899669D2C0EF55100A58D6F /* AppDelegate.swift */,
 				8899669F2C0EF55100A58D6F /* SceneDelegate.swift */,
@@ -97,7 +111,6 @@
 				889966AB2C0EF55200A58D6F /* Info.plist */,
 				889966B12C0EF6CB00A58D6F /* SignUpViewController.swift */,
 				889966B62C0EF98500A58D6F /* MediaViewController.swift */,
-				88063A462C0F55EE00514D05 /* UIFont+Extension.swift */,
 				8815C3342C1047B000CEE18B /* Lotto.swift */,
 				8815C3382C104E6A00CEE18B /* APIKey.swift */,
 				8815C33A2C10795400CEE18B /* BoxOfficeViewController.swift */,
@@ -129,6 +142,7 @@
 			packageProductDependencies = (
 				889966B42C0EF77B00A58D6F /* SnapKit */,
 				8891115B2C0F520B00010780 /* Alamofire */,
+				88636DD92C119C6D00B799EE /* Kingfisher */,
 			);
 			productName = Media;
 			productReference = 8899669A2C0EF55100A58D6F /* Media.app */;
@@ -161,6 +175,7 @@
 			packageReferences = (
 				889966B32C0EF77B00A58D6F /* XCRemoteSwiftPackageReference "SnapKit" */,
 				8891115A2C0F520B00010780 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				88636DD82C119C6D00B799EE /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 8899669B2C0EF55100A58D6F /* Products */;
 			projectDirPath = "";
@@ -197,6 +212,7 @@
 				88D4C2D22C1185DE0087D2F8 /* Weather.swift in Sources */,
 				88063A472C0F55EE00514D05 /* UIFont+Extension.swift in Sources */,
 				885885642C108DAA002CDDD3 /* BoxOffice.swift in Sources */,
+				88636DDD2C119F5900B799EE /* UIColor+Extension.swift in Sources */,
 				889966B72C0EF98500A58D6F /* MediaViewController.swift in Sources */,
 				8899669E2C0EF55100A58D6F /* AppDelegate.swift in Sources */,
 				8815C33D2C1086B100CEE18B /* BoxOfficeTableViewCell.swift in Sources */,
@@ -437,6 +453,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		88636DD82C119C6D00B799EE /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.0;
+			};
+		};
 		8891115A2C0F520B00010780 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -456,6 +480,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		88636DD92C119C6D00B799EE /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 88636DD82C119C6D00B799EE /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		8891115B2C0F520B00010780 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8891115A2C0F520B00010780 /* XCRemoteSwiftPackageReference "Alamofire" */;

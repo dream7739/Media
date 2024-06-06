@@ -16,6 +16,10 @@ struct WeatherResult : Decodable {
 }
 
 struct Weather : Decodable {
+    var iconDescription : String {
+        return "\(icon)@2x.png"
+    }
+    
     let id: Int
     let main: String
     let description: String
@@ -23,6 +27,14 @@ struct Weather : Decodable {
 }
 
 struct MainWeather : Decodable {
+    var tempDescription: String {
+        return "지금은 \(temp)°C 에요"
+    }
+    
+    var humidityDescription: String {
+        return "\(humidity)% 만큼 습해요"
+    }
+    
     let temp : Double
     let feels_like: Double
     let temp_min: Double
@@ -31,5 +43,9 @@ struct MainWeather : Decodable {
 }
 
 struct Wind : Decodable {
+    var windDescription: String {
+        return "\(speed)m/s의 바람이 불어요"
+    }
+    
     let speed: Double
 }
