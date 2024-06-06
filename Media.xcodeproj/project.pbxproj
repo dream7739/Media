@@ -26,6 +26,8 @@
 		889966B22C0EF6CB00A58D6F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889966B12C0EF6CB00A58D6F /* SignUpViewController.swift */; };
 		889966B52C0EF77B00A58D6F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 889966B42C0EF77B00A58D6F /* SnapKit */; };
 		889966B72C0EF98500A58D6F /* MediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889966B62C0EF98500A58D6F /* MediaViewController.swift */; };
+		88D4C2D02C117D560087D2F8 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D4C2CF2C117D560087D2F8 /* WeatherViewController.swift */; };
+		88D4C2D22C1185DE0087D2F8 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D4C2D12C1185DE0087D2F8 /* Weather.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		889966AB2C0EF55200A58D6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		889966B12C0EF6CB00A58D6F /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		889966B62C0EF98500A58D6F /* MediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaViewController.swift; sourceTree = "<group>"; };
+		88D4C2CF2C117D560087D2F8 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		88D4C2D12C1185DE0087D2F8 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,8 @@
 				8815C33C2C1086B100CEE18B /* BoxOfficeTableViewCell.swift */,
 				8815C33E2C1086F500CEE18B /* ReusableProtocol.swift */,
 				885885632C108DAA002CDDD3 /* BoxOffice.swift */,
+				88D4C2CF2C117D560087D2F8 /* WeatherViewController.swift */,
+				88D4C2D12C1185DE0087D2F8 /* Weather.swift */,
 			);
 			path = Media;
 			sourceTree = "<group>";
@@ -188,6 +194,7 @@
 				889111592C0F51E700010780 /* LottoViewController.swift in Sources */,
 				8815C33F2C1086F500CEE18B /* ReusableProtocol.swift in Sources */,
 				889966A22C0EF55100A58D6F /* ViewController.swift in Sources */,
+				88D4C2D22C1185DE0087D2F8 /* Weather.swift in Sources */,
 				88063A472C0F55EE00514D05 /* UIFont+Extension.swift in Sources */,
 				885885642C108DAA002CDDD3 /* BoxOffice.swift in Sources */,
 				889966B72C0EF98500A58D6F /* MediaViewController.swift in Sources */,
@@ -195,6 +202,7 @@
 				8815C33D2C1086B100CEE18B /* BoxOfficeTableViewCell.swift in Sources */,
 				889966B22C0EF6CB00A58D6F /* SignUpViewController.swift in Sources */,
 				8815C3392C104E6A00CEE18B /* APIKey.swift in Sources */,
+				88D4C2D02C117D560087D2F8 /* WeatherViewController.swift in Sources */,
 				8815C33B2C10795400CEE18B /* BoxOfficeViewController.swift in Sources */,
 				889966A02C0EF55100A58D6F /* SceneDelegate.swift in Sources */,
 			);

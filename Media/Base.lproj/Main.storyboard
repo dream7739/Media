@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lLi-xX-Yg0">
-                                <rect key="frame" x="20" y="268.66666666666669" width="353" height="300.00000000000006"/>
+                                <rect key="frame" x="20" y="228.66666666666663" width="353" height="380"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bqt-Sp-W0P">
                                         <rect key="frame" x="0.0" y="0.0" width="353" height="60"/>
@@ -30,13 +30,13 @@
                                         <buttonConfiguration key="configuration" style="plain" title="회원가입"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIU-xh-FO5">
-                                        <rect key="frame" x="0.0" y="80" width="353" height="60"/>
+                                        <rect key="frame" x="0.0" y="80.000000000000028" width="353" height="60"/>
                                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="메인"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UzW-Kv-dy0">
-                                        <rect key="frame" x="0.0" y="160" width="353" height="60"/>
+                                        <rect key="frame" x="0.0" y="160.00000000000003" width="353" height="60"/>
                                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="로또"/>
@@ -46,6 +46,12 @@
                                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="박스오피스"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pkd-AP-vXI">
+                                        <rect key="frame" x="0.0" y="320" width="353" height="60"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="날씨"/>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -63,6 +69,7 @@
                         <outlet property="lottoButton" destination="UzW-Kv-dy0" id="lpg-di-Bgj"/>
                         <outlet property="mediaButton" destination="LIU-xh-FO5" id="Wc2-hc-JDy"/>
                         <outlet property="signUpButton" destination="bqt-Sp-W0P" id="ATD-mA-cnK"/>
+                        <outlet property="weatherButton" destination="pkd-AP-vXI" id="O3X-B9-NuH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -75,7 +82,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet var mediaButton: UIButton!
     @IBOutlet var lottoButton: UIButton!
     @IBOutlet var boxOfficeButton: UIButton!
+    @IBOutlet var weatherButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,8 @@ class ViewController: UIViewController {
         mediaButton.addTarget(self, action: #selector(mediaButtonClicked), for: .touchUpInside)
         lottoButton.addTarget(self, action: #selector(lottoButtonClicked), for: .touchUpInside)
         boxOfficeButton.addTarget(self, action: #selector(boxOfficeButtonClicked), for: .touchUpInside)
+        weatherButton.addTarget(self, action: #selector(weatherButtonClicked), for: .touchUpInside)
+
     }
 
     @objc func signUpButtonClicked(){
@@ -41,6 +44,11 @@ class ViewController: UIViewController {
     @objc func boxOfficeButtonClicked(){
         let vc = BoxOfficeViewController()
         vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+    }
+    
+    @objc func weatherButtonClicked(){
+        let vc = WeatherViewController()
         present(vc, animated: true)
     }
 }
