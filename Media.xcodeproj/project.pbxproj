@@ -80,6 +80,45 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		88636DDE2C11A0EA00B799EE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				88D4C2D12C1185DE0087D2F8 /* Weather.swift */,
+				885885632C108DAA002CDDD3 /* BoxOffice.swift */,
+				8815C3342C1047B000CEE18B /* Lotto.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		88636DDF2C11A0FA00B799EE /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				889966A12C0EF55100A58D6F /* ViewController.swift */,
+				889111582C0F51E700010780 /* LottoViewController.swift */,
+				88D4C2CF2C117D560087D2F8 /* WeatherViewController.swift */,
+				889966B62C0EF98500A58D6F /* MediaViewController.swift */,
+				8815C33A2C10795400CEE18B /* BoxOfficeViewController.swift */,
+				889966B12C0EF6CB00A58D6F /* SignUpViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		88636DE02C11A11D00B799EE /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				8815C33E2C1086F500CEE18B /* ReusableProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		88636DE12C11A12700B799EE /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8815C33C2C1086B100CEE18B /* BoxOfficeTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		889966912C0EF55100A58D6F = {
 			isa = PBXGroup;
 			children = (
@@ -100,25 +139,18 @@
 		8899669C2C0EF55100A58D6F /* Media */ = {
 			isa = PBXGroup;
 			children = (
+				88636DE12C11A12700B799EE /* Cell */,
+				88636DE02C11A11D00B799EE /* Protocol */,
+				88636DDF2C11A0FA00B799EE /* ViewController */,
+				88636DDE2C11A0EA00B799EE /* Model */,
 				88636DDB2C119F4C00B799EE /* Extension */,
-				889111582C0F51E700010780 /* LottoViewController.swift */,
 				8899669D2C0EF55100A58D6F /* AppDelegate.swift */,
 				8899669F2C0EF55100A58D6F /* SceneDelegate.swift */,
-				889966A12C0EF55100A58D6F /* ViewController.swift */,
 				889966A32C0EF55100A58D6F /* Main.storyboard */,
 				889966A62C0EF55200A58D6F /* Assets.xcassets */,
 				889966A82C0EF55200A58D6F /* LaunchScreen.storyboard */,
 				889966AB2C0EF55200A58D6F /* Info.plist */,
-				889966B12C0EF6CB00A58D6F /* SignUpViewController.swift */,
-				889966B62C0EF98500A58D6F /* MediaViewController.swift */,
-				8815C3342C1047B000CEE18B /* Lotto.swift */,
 				8815C3382C104E6A00CEE18B /* APIKey.swift */,
-				8815C33A2C10795400CEE18B /* BoxOfficeViewController.swift */,
-				8815C33C2C1086B100CEE18B /* BoxOfficeTableViewCell.swift */,
-				8815C33E2C1086F500CEE18B /* ReusableProtocol.swift */,
-				885885632C108DAA002CDDD3 /* BoxOffice.swift */,
-				88D4C2CF2C117D560087D2F8 /* WeatherViewController.swift */,
-				88D4C2D12C1185DE0087D2F8 /* Weather.swift */,
 			);
 			path = Media;
 			sourceTree = "<group>";

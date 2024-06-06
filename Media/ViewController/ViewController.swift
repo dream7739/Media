@@ -43,7 +43,6 @@ class ViewController: UIViewController {
     
     @objc func boxOfficeButtonClicked(){
         let vc = BoxOfficeViewController()
-        vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
     }
     
