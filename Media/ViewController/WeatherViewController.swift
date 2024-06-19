@@ -7,11 +7,12 @@
 
 import UIKit
 import Alamofire
+import CoreLocation
 import Kingfisher
 import SnapKit
 
 class WeatherViewController: UIViewController {
-
+    
     let dateLabel = UILabel()
     
     let locImageView = UIImageView()
@@ -27,21 +28,25 @@ class WeatherViewController: UIViewController {
     let weatherImageView = UIImageView()
     
     let announceTextView = UITextView()
-
+    
     lazy var textViewList = [tempTextView, humidityTextView, windTextView, announceTextView]
     
-    let latitude = 37.517742
-    let longitude = 126.886463
-
+    var region = CLLocationCoordinate2D(latitude: 37.517742, longitude: 126.886463)
+    
+    let locationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureHierarchy()
         configureLayout()
         configureUI()
-        callWeather()
+        
+        locationManager.delegate = self
     }
     
-    
+}
+
+extension WeatherViewController {
     func configureHierarchy(){
         view.addSubview(dateLabel)
         view.addSubview(locImageView)
@@ -84,7 +89,7 @@ class WeatherViewController: UIViewController {
             make.leading.equalTo(locImageView)
             make.width.equalTo(100).priority(.low)
             make.height.equalTo(35)
-            make.trailing.lessThanOrEqualTo(view.safeAreaLayoutGuide).inset(20)      
+            make.trailing.lessThanOrEqualTo(view.safeAreaLayoutGuide).inset(20)
         }
         
         windTextView.snp.makeConstraints { make in
@@ -127,7 +132,6 @@ class WeatherViewController: UIViewController {
         
         nameLabel.textColor = .white
         nameLabel.font = .primary
-        nameLabel.text = "서울, 청년취업사관학교 영등포 캠퍼스"
         
         for textView in textViewList {
             textView.backgroundColor = .white
@@ -143,14 +147,14 @@ class WeatherViewController: UIViewController {
         weatherImageView.backgroundColor = .white
         weatherImageView.layer.cornerRadius = 5
         weatherImageView.clipsToBounds = true
-
+        
     }
     
     func callWeather(){
         var components = URLComponents(string: APIURL.weatherURL)
         
-        let lat = URLQueryItem(name: "lat", value: "\(latitude)")
-        let lon = URLQueryItem(name: "lon", value: "\(longitude)")
+        let lat = URLQueryItem(name: "lat", value: "\(region.latitude)")
+        let lon = URLQueryItem(name: "lon", value: "\(region.longitude)")
         let units = URLQueryItem(name: "units", value: "Metric")
         let appid = URLQueryItem(name: "appid", value: APIKey.weatherKey)
         
@@ -161,7 +165,6 @@ class WeatherViewController: UIViewController {
         AF.request(url).responseDecodable(of: WeatherResult.self) { response in
             switch response.result {
             case .success(let value):
-                //dump(value)
                 self.tempTextView.text = value.main.tempDescription
                 self.humidityTextView.text = value.main.humidityDescription
                 self.windTextView.text = value.wind.windDescription
@@ -175,4 +178,109 @@ class WeatherViewController: UIViewController {
             }
         }
     }
+    
+    func findAddress(){
+        let gecoder = CLGeocoder()
+        let location = CLLocation(latitude: region.latitude, longitude: region.longitude)
+        let locale = Locale(identifier: "Ko-kr")
+        
+        
+        gecoder.reverseGeocodeLocation(location, preferredLocale: locale) { (placemarks, error) in
+            if let address = placemarks {
+                var add: String = ""
+                if let area: String = address.last?.administrativeArea{
+                    add += area
+                }
+                if let name: String = address.last?.name {
+                    add += ", "
+                    add += name
+                }
+                
+                DispatchQueue.main.async {
+                    self.nameLabel.text = add
+                }
+            }
+            
+        }
+        
+    }
+    
+}
+
+extension  WeatherViewController {
+    func checkDeviceLocationAuthorization(){
+        if CLLocationManager.locationServicesEnabled() {
+            checkCurrentLocationAuthorization()
+        }else{
+            getDeviceLocatitonAuthorizaion()
+        }
+    }
+    
+    func checkCurrentLocationAuthorization(){
+        var status: CLAuthorizationStatus
+        
+        if #available(iOS 14.0, *){
+            status = locationManager.authorizationStatus
+        } else {
+            status = CLLocationManager.authorizationStatus()
+        }
+        
+        switch status {
+        case .notDetermined:
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.requestWhenInUseAuthorization()
+        case .denied:
+            getDeviceLocatitonAuthorizaion()
+        case .authorizedWhenInUse:
+            locationManager.startUpdatingLocation()
+        default:
+            print(status)
+        }
+    }
+    
+    private func getDeviceLocatitonAuthorizaion(){
+        let alert = UIAlertController(
+            title: "위치서비스를 사용할 수 없습니다. 기기의 '설정 > 개인정보 보호'에서 위치 서비스를 켜주세요(필수권한)",
+            message: nil,
+            preferredStyle: .alert
+        )
+        
+        let setting = UIAlertAction(title: "설정으로 이동", style: .default){ _ in
+            if let setting = URL(string: UIApplication.openSettingsURLString){
+                UIApplication.shared.open(setting)
+            }
+        }
+        
+        let cancel = UIAlertAction(title: "취소", style: .cancel)
+        
+        alert.addAction(setting)
+        alert.addAction(cancel)
+        
+        present(alert, animated: true)
+    }
+}
+
+extension WeatherViewController: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        if let coordinate = locations.last?.coordinate {
+            region = coordinate
+            findAddress()
+            callWeather()
+        }
+        
+        locationManager.stopUpdatingLocation()
+    }
+    
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: any Error) {
+        print(#function)
+    }
+    
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        checkDeviceLocationAuthorization()
+    }
+    
+    
 }
