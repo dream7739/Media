@@ -14,6 +14,7 @@
 		8815C33B2C10795400CEE18B /* BoxOfficeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815C33A2C10795400CEE18B /* BoxOfficeViewController.swift */; };
 		8815C33D2C1086B100CEE18B /* BoxOfficeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815C33C2C1086B100CEE18B /* BoxOfficeTableViewCell.swift */; };
 		8815C33F2C1086F500CEE18B /* ReusableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815C33E2C1086F500CEE18B /* ReusableProtocol.swift */; };
+		883329592C32A5A8009A0E19 /* NasaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883329582C32A5A8009A0E19 /* NasaViewController.swift */; };
 		885885642C108DAA002CDDD3 /* BoxOffice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885885632C108DAA002CDDD3 /* BoxOffice.swift */; };
 		88636DDA2C119C6D00B799EE /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 88636DD92C119C6D00B799EE /* Kingfisher */; };
 		88636DDD2C119F5900B799EE /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88636DDC2C119F5900B799EE /* UIColor+Extension.swift */; };
@@ -40,6 +41,7 @@
 		8815C33A2C10795400CEE18B /* BoxOfficeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeViewController.swift; sourceTree = "<group>"; };
 		8815C33C2C1086B100CEE18B /* BoxOfficeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeTableViewCell.swift; sourceTree = "<group>"; };
 		8815C33E2C1086F500CEE18B /* ReusableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableProtocol.swift; sourceTree = "<group>"; };
+		883329582C32A5A8009A0E19 /* NasaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaViewController.swift; sourceTree = "<group>"; };
 		885885632C108DAA002CDDD3 /* BoxOffice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOffice.swift; sourceTree = "<group>"; };
 		88636DDC2C119F5900B799EE /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		889111582C0F51E700010780 /* LottoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LottoViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				889966B62C0EF98500A58D6F /* MediaViewController.swift */,
 				8815C33A2C10795400CEE18B /* BoxOfficeViewController.swift */,
 				889966B12C0EF6CB00A58D6F /* SignUpViewController.swift */,
+				883329582C32A5A8009A0E19 /* NasaViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				8899669E2C0EF55100A58D6F /* AppDelegate.swift in Sources */,
 				8815C33D2C1086B100CEE18B /* BoxOfficeTableViewCell.swift in Sources */,
 				889966B22C0EF6CB00A58D6F /* SignUpViewController.swift in Sources */,
+				883329592C32A5A8009A0E19 /* NasaViewController.swift in Sources */,
 				8815C3392C104E6A00CEE18B /* APIKey.swift in Sources */,
 				88D4C2D02C117D560087D2F8 /* WeatherViewController.swift in Sources */,
 				8815C33B2C10795400CEE18B /* BoxOfficeViewController.swift in Sources */,

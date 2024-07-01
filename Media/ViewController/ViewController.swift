@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet var lottoButton: UIButton!
     @IBOutlet var boxOfficeButton: UIButton!
     @IBOutlet var weatherButton: UIButton!
+    @IBOutlet var nasaButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +23,7 @@ class ViewController: UIViewController {
         lottoButton.addTarget(self, action: #selector(lottoButtonClicked), for: .touchUpInside)
         boxOfficeButton.addTarget(self, action: #selector(boxOfficeButtonClicked), for: .touchUpInside)
         weatherButton.addTarget(self, action: #selector(weatherButtonClicked), for: .touchUpInside)
-
+        nasaButton.addTarget(self, action: #selector(nasaButtonClicked), for: .touchUpInside)
     }
 
     @objc func signUpButtonClicked(){
@@ -50,6 +51,11 @@ class ViewController: UIViewController {
         let vc = WeatherViewController()
         let nav = UINavigationController(rootViewController: vc)
         present(nav, animated: true)
+    }
+    
+    @objc func nasaButtonClicked(){
+        let vc = NasaViewController()
+        present(vc, animated: true)
     }
 }
 

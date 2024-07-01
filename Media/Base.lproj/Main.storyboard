@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lLi-xX-Yg0">
-                                <rect key="frame" x="20" y="228.66666666666663" width="353" height="380"/>
+                                <rect key="frame" x="20" y="188.66666666666663" width="353" height="460"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bqt-Sp-W0P">
                                         <rect key="frame" x="0.0" y="0.0" width="353" height="60"/>
@@ -53,6 +53,12 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="날씨"/>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kXT-Li-xyf">
+                                        <rect key="frame" x="0.0" y="400" width="353" height="60"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="나사"/>
+                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -68,6 +74,7 @@
                         <outlet property="boxOfficeButton" destination="0z3-9C-Nyp" id="Psh-Rb-Okm"/>
                         <outlet property="lottoButton" destination="UzW-Kv-dy0" id="lpg-di-Bgj"/>
                         <outlet property="mediaButton" destination="LIU-xh-FO5" id="Wc2-hc-JDy"/>
+                        <outlet property="nasaButton" destination="kXT-Li-xyf" id="QAm-E5-z0c"/>
                         <outlet property="signUpButton" destination="bqt-Sp-W0P" id="ATD-mA-cnK"/>
                         <outlet property="weatherButton" destination="pkd-AP-vXI" id="O3X-B9-NuH"/>
                     </connections>
